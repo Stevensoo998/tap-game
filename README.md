@@ -2,8 +2,6 @@
 
 **Tap to Win** is a fast-paced, interactive web game where users race against the clock to tap as many times as possible within 30 seconds. The game records scores, displays a leaderboard, and rewards players based on their performance.
 
-![screenshot](https://user-images.githubusercontent.com/your-screenshot-url) <!-- Optional: Replace with actual screenshot URL -->
-
 ---
 
 ## 🕹️ Features
