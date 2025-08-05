@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tap Speed Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="front-page">
+  <div class="gameplay">
+    <div>
+ <h1 class="header top">Tap to Win</h1>
+ <h3 class="subheader top">FEEL THE PULSE</h3>
+  <div class="info">
+
+  <div id="timer">Time Left: 30s</div>
+  </div>
+
+
+  <!-- Unified Button Image -->
+  <button id="tapBtn">
+    <img src="image/tap circle.png" alt="Tap" class="tap-image" />
+    <span id="tapBtnLabel">PLAY NOW</span>
+  </button>
+  </div>
+<div>
+  <h1 class="header">TAP FAST!</h1>
+  <h3 class="subheader">Unlock Your Reward.</h3>
+  </div>
+  </div>
+  <div class="rewards-container">
+    <h3 class="subheader">TAP REWARDS</h3>
+    <ul class="prize-list">
+      <li>150+ Taps - $30 Voucher</li>
+      <li>250+ Taps - $30 Voucher + Lucky Draw Entry</li>
+    </ul>
+  </div>
+  </div>
+
+  
+
+  <!-- #submitModal -->
+<div id="submitModal" class="modal">
+  <div class="modal-content custom-submission">
+    <h2 class="score-label">YOUR SCORE</h2>
+    <div class="score-value"><span id="finalScoreText">0</span> Taps!</div>
+    <p class="score-note">OGAWA will send your rewards through our official WhatsApp account.</p>
+
+    <label>Name:</label>
+    <input type="text" id="finalName" placeholder="Your Name" />
+
+    <label>Phone Number:</label>
+    <input type="text" id="finalPhone" placeholder="Phone Number" />
+
+    <div class="pdpa-text">
+      <strong>PDPA Consent Statement:</strong>
+      <p>
+        By submitting this form, you consent to the collection and use of your personal data
+        by OGAWA Singapore for the purpose of game participation, reward fulfilment,
+        and future communications, in accordance with the Personal Data Protection Act (PDPA).
+      </p>
+    </div>
+
+<div class="pdpa-checkbox">
+  <input type="checkbox" id="pdpaCheck" />
+  <label for="pdpaCheck">I agree to the PDPA terms and conditions.</label>
+</div>
+
+    <button id="submitScoreBtn" class="next-button">NEXT</button>
+    <h1 class="header top">LEADERBOARD</h1>
+    <ol id="leaderboard"></ol>
+  </div>  
+</div>
+
+<div id="loadingOverlay" class="modal">
+  <div class="modal-content">
+    <p>Submitting your score<span id="loadingDots">.</span></p>
+  </div>
+</div>
+
+  <!-- Result Panel -->
+  <div id="resultPanel" class="result-modal">
+  <div class="result-modal-content">
+    <h3>Your Result</h3>
+    <p id="positionText"></p>
+    <p id="rewardText"></p>
+    <p id="luckyDrawText"></p>
+    <button id="closeResultBtn">Restart</button>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

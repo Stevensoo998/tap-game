@@ -1,0 +1,397 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif !important;
+  background-image: url("image/Game-page-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+    touch-action: manipulation; /* disables double-tap zoom and delays */
+  -webkit-user-select: none;  /* prevent text selection on tap */
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.front-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+}
+.gameplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.header.top{
+  font-size: 9vw;
+}
+
+.subheader.top{
+  font-size: 3.5vw;
+}
+.header {
+  color: #b9f2ff;
+  font-size: 7vw;
+  line-height: 16px;
+  font-weight: normal;
+}
+
+.subheader {
+  color: white;
+  font-weight: normal;
+  font-size: clamp(10px, 3vw, 14px);
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 0.8em;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 30px;
+  background-color: #0c0c1f;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#tapBtn {
+  font-size: 36px;
+  
+  padding: 0;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 10px auto;
+  background: none;
+  position: relative;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+
+  touch-action: manipulation;
+}
+
+#tapBtnLabel {
+  font-size: clamp(24px, 5vw, 50px);
+}
+
+#tapBtn.clicked {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 5px 4px rgba(0, 255, 255, 0.7));
+}
+
+#tapBtn img.tap-image {
+  width: 100%;
+  max-width: 85%;
+  height: auto;
+}
+
+#tapBtn span#tapBtnLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  font-weight: normal;
+color:#b9f2ff;;
+  pointer-events: none;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#tapBtn:disabled {
+  background: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.countdown {
+  animation: pulse 0.4s ease-in-out;
+  font-size: 60px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.rewards-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0d1224;
+  color: white;
+  padding: 2vh 20%;
+  font-size: clamp(10px, 2vw, 14px);
+  text-align: left;
+  z-index: 1000;
+}
+
+.prize-list {
+  list-style-type: disc;
+  padding-left: 0;
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+}
+
+/* Modal & Result */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+    background-image: url("image/submit-modal-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  z-index: 9999;
+  overflow-y: scroll; /* Allow scroll */
+}
+
+.modal-content {
+  background-image: url("image/submit-modal-bg.jpg");
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+    max-height: 100%;
+      overflow-y: auto;        /* enables vertical scroll */
+}
+
+.modal input {
+  display: block;
+  width: 90%;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Modal content styling */
+.custom-submission {
+  background-image: url("image/submit-modal-bg.jpg");
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+}
+
+.score-label {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.score-value {
+  text-align: center;
+  font-size: 64px;
+  font-weight: normal;
+  margin-bottom: 10px;
+color:#b9f2ff;
+}
+
+.score-note {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#submitModal input[type="text"] {
+  width: 85%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.pdpa-text {
+  font-size: 12px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.pdpa-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.pdpa-checkbox input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.next-button {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 30px;
+  background-color: #0c0c1f;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#loadingOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8); /* opaque black overlay */
+  z-index: 9999;
+}
+
+#loadingOverlay .modal-content {
+  background: transparent;         /* transparent box */
+  box-shadow: none;                /* remove any shadow */
+  color: white;                    /* make text visible */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#loadingOverlay .modal-content {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.result-modal{
+  display: none;
+  color: white;  
+  height:100vh;
+}
+
+#resultPanel {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#resultPanel .modal-content {
+  text-align: center;
+  margin: 0;
+}
+
+/* ===== Desktop Styles ===== */
+@media screen and (min-width: 768px) {
+  .header.top {
+    font-size: 48px;
+  }
+
+  .subheader.top {
+    font-size: 24px;
+  }
+
+  .header {
+    font-size: 36px;
+  }
+
+  .subheader {
+    font-size: 18px;
+  }
+
+  .info {
+    font-size: 1.2em;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  #tapBtn {
+    max-width: 400px;
+    margin: 20px auto;
+  }
+
+  #tapBtn img.tap-image {
+    max-width: 70%;
+  }
+
+  #tapBtn span#tapBtnLabel {
+    font-size: 28px;
+  }
+
+  .modal-content,
+  .result-modal-content {
+    max-width: 500px;
+    padding: 40px;
+  }
+
+  .score-value {
+    font-size: 72px;
+  }
+
+  .rewards-container {
+    font-size: 16px;
+    padding: 20px 25%;
+  }
+
+  .next-button {
+    font-size: 20px;
+    padding: 16px 40px;
+  }
+
+  .custom-submission {
+    font-size: 16px;
+  }
+
+  .pdpa-text {
+    font-size: 14px;
+  }
+
+  .pdpa-checkbox {
+    font-size: 16px;
+  }
+
+  #submitModal input[type="text"] {
+    font-size: 18px;
+  }
+
+  #loadingOverlay .modal-content {
+    font-size: 24px;
+  }
+}
